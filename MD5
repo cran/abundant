@@ -1,0 +1,12 @@
+91f1933db68b1aa088908abe9caa2fdd *DESCRIPTION
+6c7aaf312c7be83aa34558ee68e855e5 *NAMESPACE
+053ce8682327ff24471e5720ed8db8e0 *R/fit.pfc.R
+4ca86f91a346891ddd9f028fb174f606 *R/pred.pfc.R
+c6219f3fcb6691affcdefeeb5668cdb7 *R/pred.response.R
+23a42a9ae64096381a83b28b7bb0556c *R/ptest.R
+258d8fb6ec6e7b44e8f2d4268bd46111 *R/solve.exact.R
+fcac7c9f0861b27d0f6702e9e2316298 *R/tune.cv.R
+445a1519a55e40e69342a1cdeb9782f1 *man/abundant-package.Rd
+d7eab22d33650bd26adef90866e3b7d7 *man/fit.pfc.Rd
+4bb0f61048d3f85ec525f202153bff03 *man/pred.response.Rd
+3147d9ecd426e589c78d078af6ce4be2 *src/pred.c
