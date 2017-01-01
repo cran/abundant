@@ -1,3 +1,4 @@
 export(fit.pfc)
 export(pred.response)
+import(QUIC)
 useDynLib(abundant) 

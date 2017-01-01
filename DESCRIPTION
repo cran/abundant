@@ -1,16 +1,17 @@
 Package: abundant
 Type: Package
-Title: Abundant regression and high-dimensional principal fitted
-        components
-Version: 1.0
-Date: 2012-06-27
+Title: High-Dimensional Principal Fitted Components and Abundant
+        Regression
+Version: 1.1
+Date: 2017-01-01
 Author: Adam J. Rothman
 Maintainer: Adam J. Rothman <arothman@umn.edu>
 Depends: R (>= 2.10), QUIC
 Description: Fit and predict with the high-dimensional principal fitted
-        components model.
+        components model.  This model is described by Cook, Forzani, and Rothman (2012)
+	<doi:10.1214/11-AOS962>.
 License: GPL-2
-Packaged: 2013-07-02 18:44:59 UTC; arothman
 NeedsCompilation: yes
+Packaged: 2017-01-01 14:05:57 UTC; arothman
 Repository: CRAN
-Date/Publication: 2013-07-03 17:51:21
+Date/Publication: 2017-01-01 15:15:35
