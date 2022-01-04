@@ -41,28 +41,8 @@ tune.cv=function(X, F, d, lam.vec, kfold=5, silent=TRUE, qrtol=1e-16, cov.tol=1e
     for(i in 1:length(lam.vec))
     {
       lam=lam.vec[i]
-      Moff=matrix(lam, nrow=p, ncol=p)
-      diag(Moff)=0      
-      if(i == 1)
-      {
-        cov.out=NULL
-        cov.out$X=diag(p)
-        cov.out$W=diag(p)
-      }
-      if(lam < 1 )
-      {  
-        cov.out=QUIC(S=R.tr, rho=Moff, tol=cov.tol, msg=(1*(!silent)), maxIter=cov.maxit, X.init=cov.out$X, W.init=cov.out$W)
-      }  else
-      {
-        cov.out$X=diag(p)
-        cov.out$W=diag(p)
-      }
-      if(!is.matrix(cov.out$X))
-        cov.out$X=matrix(cov.out$X, nrow=p, ncol=p)
-      if(!is.matrix(cov.out$W))
-        cov.out$W=matrix(cov.out$W, nrow=p, ncol=p)  
-      W=sdi.tr * cov.out$X * rep(sdi.tr, each = p)      
-
+      cov.out=glasso(s=R.tr, rho=lam, thr=cov.tol, maxit=cov.maxit, penalize.diagonal=FALSE)
+      W=sdi.tr * cov.out$wi * rep(sdi.tr, each = p)      
       K = tcrossprod(U%*%W, U)
       Vd = eigen(K, symmetric=TRUE)$vec[, 1:d, drop=FALSE]
       B = crossprod(Vd, Phi.tr.nsq)

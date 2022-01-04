@@ -83,7 +83,7 @@ when \eqn{p \leq n-r-1} this becomes the inverse of \eqn{\widehat\Delta};
 for \eqn{\widehat W};
 \item \code{weight.type="L1"} uses the L1-penalized inverse of \eqn{\widehat\Delta} described in equation (5.4) of Cook, Forzani,
 and Rothman (2012).  In this case, \code{lam.vec} and \code{d} must be specified by the user.
-The QUIC algorithm of Hsieh et al. (2011) is used through the R package \code{QUIC}.
+The glasso algorithm of Friedman et al. (2008) is used through the R package \code{glasso}.
 }
 }
 \item{lam.vec}{
@@ -145,9 +145,9 @@ Cook, R. D., Forzani, L., and Rothman, A. J. (2012).
 Estimating sufficient reductions of the predictors in abundant high-dimensional regressions. 
 Annals of Statistics 40(1), 353-384.
 
-Cho-Jui Hsieh, Matyas A. Sustik, Inderjit S. Dhillon, and Pradeep Ravikumar (2011).
-Sparse inverse covariance matrix estimation using quadratic approximation. 
-Advances in Neural Information Processing Systems 24, 2011, p. 2330--2338.  
+Friedman, J.,  Hastie, T., and Tibshirani R. (2008). 
+Sparse inverse covariance estimation with the lasso. 
+Biostatistics 9(3), 432-441.
 }
 \author{
 Adam J. Rothman

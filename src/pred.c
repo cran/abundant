@@ -1,4 +1,7 @@
+#include <Rdefines.h>
+#include <R_ext/Rdynload.h>
 #include <math.h>
+
 void pred(double * Ehat, double * ghat, double * R, double * BFt,  double * GWG, double * y, int * nin, int * din, int * nxin)
 {
   int n=*nin;
@@ -35,5 +38,14 @@ void pred(double * Ehat, double * ghat, double * R, double * BFt,  double * GWG,
   }
 }
 
+static R_NativePrimitiveArgType pred_t[9] 
+= {REALSXP, REALSXP, REALSXP, REALSXP, REALSXP, REALSXP, 
+   INTSXP, INTSXP, INTSXP};
 
-			 
+static const R_CMethodDef cMethod[] = {{"pred", (DL_FUNC) &pred, 9, pred_t}, {NULL, NULL, 0, NULL}};
+
+void R_init_abundant(DllInfo *dll)
+{
+  R_registerRoutines(dll, cMethod, NULL, NULL, NULL);
+  R_useDynamicSymbols(dll, FALSE);
+}

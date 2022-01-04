@@ -80,11 +80,8 @@ fit.pfc=function(X, y, r=4, d=NULL, F.user=NULL, weight.type=c("sample", "diag",
   {
     sdi=1/(sqrt(diag(Deltahat)))
     Corhat=sdi * Deltahat * rep(sdi, each = p)
-    Moff=matrix(best.lam, nrow=p, ncol=p)
-    diag(Moff)=0
-    cov.out=QUIC(S=Corhat, rho=Moff, tol=cov.tol, msg=(1*(!silent)), maxIter=cov.maxit)
-    W=cov.out$X
-    if(!is.matrix(W)) W=matrix(W, nrow=p, ncol=p)
+    cov.out=glasso(s=Corhat, rho=best.lam, thr=cov.tol, maxit=cov.maxit, penalize.diagonal=FALSE)
+    W=cov.out$wi   
     W=sdi * W * rep(sdi, each = p)   
   }
   Phi=ftf/n
